@@ -1,0 +1,137 @@
+/* variables */
+.dashboard {
+  letter-spacing: 2px;
+  word-break: break-all;
+}
+
+.dashboard .dashboard-header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.dashboard .dashboard-header .name {
+  color: #d9d9d9;
+  border-bottom: 1px solid #3c6e71;
+  text-transform: uppercase;
+}
+
+.dashboard .dashboard-header p {
+  margin-top: 1em;
+  color: #d9d9d9;
+}
+
+.dashboard .dashboard-info {
+  font-size: 1.1em;
+}
+
+.dashboard .dashboard-info h3 {
+  margin: 4em 0 1em;
+  border-bottom: 1px solid #3c6e71;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.dashboard .dashboard-info P {
+  margin: 2em 0;
+}
+
+.dashboard .dashboard-info P span {
+  color: #d9d9d9;
+  font-size: 1.2em;
+}
+
+.dashboard .dashboard-change h3 {
+  border-bottom: 1px solid #3c6e71;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+
+.dashboard .dashboard-change .dashboard-change-content {
+  margin: 1em 0;
+  background-color: #353535b6;
+  padding: 0.8em;
+  border-radius: 0.8em;
+}
+
+.dashboard .dashboard-change .dashboard-change-content p {
+  font-size: 1.3em;
+  line-height: 30px;
+  word-break: break-all;
+}
+
+.dashboard .dashboard-change .dashboard-change-content p span {
+  color: #d9d9d9;
+}
+
+.dashboard .dashboard-change .dashboard-change-content .dashboard-input {
+  margin: 0.7em 0;
+}
+
+.dashboard .dashboard-change .dashboard-change-content .dashboard-input p {
+  font-size: 0.7em;
+  line-height: normal;
+  font-style: italic;
+}
+
+.dashboard .dashboard-change .dashboard-change-content .dashboard-input .dashboard-error {
+  font-size: 0.7em;
+  color: red;
+}
+
+.dashboard .dashboard-change .dashboard-change-content .dashboard-input input {
+  margin: 1em 0 0.1em;
+  display: block;
+  padding: 0.5em 1em;
+  background-color: #353535;
+  border: none;
+  border-radius: 0.4em;
+  color: #ffffff;
+}
+
+.dashboard .dashboard-change .dashboard-change-content .dashboard-input input:focus {
+  background-color: #272525;
+}
+
+.dashboard .dashboard-change .dashboard-change-content .dashboard-input button {
+  margin-top: 1em;
+  display: block;
+  background-color: #353535;
+  border: none;
+  border-radius: 0.4em;
+  color: #ffffff;
+  padding: 0.5em 1em;
+  -webkit-transition: all 0.3s linear;
+  transition: all 0.3s linear;
+  cursor: pointer;
+}
+
+.dashboard .dashboard-change .dashboard-change-content .dashboard-input button:hover {
+  background-color: #ffffff;
+  color: #353535;
+}
+
+@media (min-width: 800px) {
+  .dashboard .dashboard-header {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  .dashboard .dashboard-header p {
+    margin-top: 0;
+  }
+}
+/*# sourceMappingURL=dashboard.css.map */

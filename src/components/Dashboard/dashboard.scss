@@ -1,0 +1,130 @@
+/* variables */
+$color-jet: #353535;
+$color-lightblue: #3c6e71;
+$color-white: #ffffff;
+$color-grey: #d9d9d9;
+$color-blue: #284b63;
+$transition: all 0.3s linear;
+$box-shadow: 1px -1px 5px 4px rgba(53, 53, 53, 0.72);
+$font-small: 0.8em;
+$font-medium: 1.2em;
+$font-large: 2em;
+$max-width: 85vw;
+$max-width-large: 80vw;
+
+.dashboard {
+  letter-spacing: 2px;
+  word-break: break-all;
+  .dashboard-header {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+    .name {
+      color: $color-grey;
+      border-bottom: 1px solid $color-lightblue;
+      text-transform: uppercase;
+    }
+
+    p {
+      margin-top: 1em;
+      color: $color-grey;
+    }
+  }
+
+  .dashboard-info {
+    font-size: 1.1em;
+
+    h3 {
+      margin: 4em 0 1em;
+      border-bottom: 1px solid $color-lightblue;
+      width: fit-content;
+    }
+    P {
+      margin: 2em 0;
+      span {
+        color: $color-grey;
+        font-size: 1.2em;
+      }
+    }
+  }
+
+  .dashboard-change {
+    h3 {
+      border-bottom: 1px solid $color-lightblue;
+      width: fit-content;
+    }
+
+    .dashboard-change-content {
+      margin: 1em 0;
+      background-color: #353535b6;
+      padding: 0.8em;
+      border-radius: 0.8em;
+      p {
+        font-size: 1.3em;
+        line-height: 30px;
+        word-break: break-all;
+        span {
+          color: $color-grey;
+        }
+      }
+      .dashboard-input {
+        margin: 0.7em 0;
+
+        p {
+          font-size: 0.7em;
+          line-height: normal;
+          font-style: italic;
+        }
+
+        .dashboard-error {
+          font-size: 0.7em;
+          color: red;
+        }
+
+        input {
+          margin: 1em 0 0.1em;
+          display: block;
+          padding: 0.5em 1em;
+          background-color: $color-jet;
+          border: none;
+          border-radius: 0.4em;
+          color: $color-white;
+
+          &:focus {
+            background-color: #272525;
+          }
+        }
+
+        button {
+          margin-top: 1em;
+          display: block;
+          background-color: $color-jet;
+          border: none;
+          border-radius: 0.4em;
+          color: $color-white;
+          padding: 0.5em 1em;
+          transition: $transition;
+          cursor: pointer;
+          &:hover {
+            background-color: $color-white;
+            color: $color-jet;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: 800px) {
+  .dashboard {
+    .dashboard-header {
+      flex-direction: row;
+      align-items: center;
+
+      p {
+        margin-top: 0;
+      }
+    }
+  }
+}
