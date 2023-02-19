@@ -5,7 +5,7 @@ import { useGlobalContext } from "./context";
 const BlogContext = createContext();
 
 const BlogProvider = ({ children }) => {
-  const [blogLoading, setBlogLoading] = useState(false);
+  const [blogLoading, setBlogLoading] = useState(true);
   const [allBlogs, setAllBlogs] = useState([]);
   const [myBlogs, setMyBlogs] = useState([]);
   const [blogType, setBlogType] = useState("all");
