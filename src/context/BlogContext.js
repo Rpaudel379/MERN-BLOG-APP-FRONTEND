@@ -12,7 +12,7 @@ const BlogProvider = ({ children }) => {
 
   const { userData } = useGlobalContext();
 
-  const getAllBlogs = async () => {
+  /*  const getAllBlogs = async () => {
     try {
       const response = await axios.get(
         process.env.REACT_APP_BACKEND + "/api/blogs/getblogs"
@@ -47,16 +47,18 @@ const BlogProvider = ({ children }) => {
 
   // get all blogs
   useEffect(() => {
-    setBlogLoading(true);
-    const localAllBlogs = JSON.parse(localStorage.getItem("allBlogs"));
+    setTimeout(() => {
+      setBlogLoading(true);
+      const localAllBlogs = JSON.parse(localStorage.getItem("allBlogs"));
 
-    if (localAllBlogs) {
-      setAllBlogs(localAllBlogs);
-    } else {
-      getAllBlogs();
-    }
+      if (localAllBlogs) {
+        setAllBlogs(localAllBlogs);
+      } else {
+        getAllBlogs();
+      }
 
-    setBlogLoading(false);
+      setBlogLoading(false);
+    }, [2000]);
   }, []);
 
   // get user specific blogs
@@ -73,9 +75,10 @@ const BlogProvider = ({ children }) => {
 
       setBlogLoading(false);
     }
-  }, [userData]);
+  }, [userData]); */
 
-  /* const getBlogs = async () => {
+  // ALL BLOGS
+  const getAllBlogs = async () => {
     setBlogLoading(true);
     try {
       const fetch = await axios.get(
@@ -91,9 +94,32 @@ const BlogProvider = ({ children }) => {
     }
   };
 
+  // MY BLOGS
+  const getMyBlogs = async () => {
+    try {
+      const fetch = await axios.post(
+        process.env.REACT_APP_BACKEND + "/api/blogs/userBlog",
+        {
+          userId: userData.id,
+        }
+      );
+      const response = await fetch.data;
+      console.log(response);
+      setMyBlogs(response);
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
   useEffect(() => {
-    getBlogs();
-  }, []); */
+    getAllBlogs();
+  }, []);
+
+  useEffect(() => {
+    if (userData) {
+      getMyBlogs();
+    }
+  }, [userData]);
 
   return (
     <BlogContext.Provider

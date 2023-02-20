@@ -1,8 +1,9 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { BiCalendar } from "react-icons/bi";
+import { FaTimes } from "react-icons/fa";
 
-const AllBlogs = ({ blogs, loading }) => {
+const AllBlogs = ({ blogs, loading, blogType, handleDeleteBlog }) => {
   if (loading) {
     return <h2>loading blogs...</h2>;
   }
@@ -17,6 +18,18 @@ const AllBlogs = ({ blogs, loading }) => {
         const { image, title, body, createdAt, name, _id } = blog;
         return (
           <section className="section-blog" key={blog._id}>
+            {/* {blogType !== "all" && (
+              <div
+                className="delete-blog"
+                title="delete blog"
+                onClick={() => {
+                  handleDeleteBlog(blog._id);
+                }}
+              >
+                <FaTimes />
+              </div>
+            )} */}
+
             <div className="img-cont-all">
               <Link to={`/blog/${_id}`} style={{ fontWeight: "bold" }}>
                 <img src={image} alt="img" />

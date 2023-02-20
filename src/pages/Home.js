@@ -11,6 +11,10 @@ const Home = (props) => {
   document.title = "Home";
   const { allBlogs, myBlogs, blogLoading, blogType } = useBlogProvider();
 
+  const handleDeleteBlog = (id) => {
+    console.log(id);
+  };
+
   return (
     <div className="home container">
       <Hero />
@@ -18,6 +22,8 @@ const Home = (props) => {
       <AllBlogs
         blogs={blogType === "all" ? allBlogs : myBlogs}
         loading={blogLoading}
+        blogType={blogType}
+        handleDeleteBlog={handleDeleteBlog}
       />
     </div>
   );

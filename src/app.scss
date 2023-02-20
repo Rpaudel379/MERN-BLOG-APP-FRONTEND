@@ -523,6 +523,7 @@ h3 {
   .all-blogs {
     display: grid;
     grid-template-columns: $max-width;
+    position: relative;
     .section-blog {
       margin: 1em 0 2em;
       height: 35em;
@@ -559,6 +560,25 @@ h3 {
           display: inline-block;
           margin-top: 1em;
         }
+      }
+    }
+    .delete-blog {
+      position: absolute;
+
+      right: 20px;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 50px;
+      width: 50px;
+      border-radius: 50%;
+
+      cursor: pointer;
+      font-size: 1.2em;
+
+      &:hover {
+        background-color: #3535357b;
       }
     }
   }

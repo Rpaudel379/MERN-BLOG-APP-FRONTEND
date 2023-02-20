@@ -32,10 +32,10 @@ const App = () => {
     <>
       <Router>
         <Navbar />
-        <CacheSwitch>
-          <CacheRoute exact path="/">
+        <Switch>
+          <Route exact path="/">
             <Home title="Home" bg="#fff" />
-          </CacheRoute>
+          </Route>
           <Route path="/login">
             <Login title="Login" bg="#284b63" />
           </Route>
@@ -59,7 +59,7 @@ const App = () => {
           <Route path="*">
             <Error title="404 error" />
           </Route>
-        </CacheSwitch>
+        </Switch>
         <Footer />
       </Router>
     </>
@@ -67,3 +67,37 @@ const App = () => {
 };
 
 export default App;
+
+/* 
+<Router>
+<Navbar />
+<CacheSwitch>
+  <CacheRoute exact path="/">
+    <Home title="Home" bg="#fff" />
+  </CacheRoute>
+  <Route path="/login">
+    <Login title="Login" bg="#284b63" />
+  </Route>
+  <Route path="/signup">
+    <SignUp
+      title="Signup"
+      bg="linear-gradient(to right, #485563, #29323c)"
+    />
+  </Route>
+
+  <Route path="/dashboard">
+    <Dashboard title="Dashboard" bg="#fff" />
+  </Route>
+  <Route path="/addblog">
+    <AddBlog title="Add Blog" />
+  </Route>
+  <Route path="/blog/:id">
+    <Blog />
+  </Route>
+
+  <Route path="*">
+    <Error title="404 error" />
+  </Route>
+</CacheSwitch>
+<Footer />
+</Router> */

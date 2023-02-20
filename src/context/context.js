@@ -33,7 +33,7 @@ const AppProvider = ({ children }) => {
       await axios.get(`${process.env.REACT_APP_BACKEND}/api/auth/checkUser`);
     } catch (error) {
       // backend will remove invalid cookie token
-      console.log(error.response.data);
+      console.log(error?.response?.data);
       // history.push("/login");
       localStorage.removeItem("user");
       localStorage.removeItem("myBlogs");
